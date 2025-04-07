@@ -76,7 +76,7 @@ export default function LoginForm() {
             </div>
 
             {/* Toast notification integrated in LoginForm */}
-            <div className="position-fixed bottom-0 end-0 p-3" style={{ zIndex: 5 }}>
+            <div className="position-fixed bottom-5 end-5 p-5" style={{ zIndex: 5 }}>
                 <Toast 
                     show={showToast} 
                     onClose={handleCloseToast}
