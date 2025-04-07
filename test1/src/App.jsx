@@ -21,7 +21,7 @@ function App() {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow">
           <div className="container-fluid">
             <Link className="navbar-brand d-flex align-items-center" to="/">
-              <img src={viteLogo} className="logo me-2" alt="Vite logo" />
+              <img src={viteLogo} className="logo me-2" alt="Vite logos" />
               <img src={reactLogo} className="logo react me-2" alt="React logo" />
               <span className="fw-bold">React Study</span>
             </Link>
