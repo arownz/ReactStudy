@@ -13,10 +13,10 @@ export default function Fruits() {
     { id: 6, name: "Pineapple", color: "Brown", price: 20, image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Pineapple_and_cross_section.jpg" },
     { id: 7, name: "Strawberry", color: "Red", price: 18, image: "https://upload.wikimedia.org/wikipedia/commons/2/29/PerfectStrawberry.jpg" },
     { id: 8, name: "Watermelon", color: "Green", price: 25, image: "https://th.bing.com/th/id/OSK.HERO3Ts0n9noc587efpZ3WRt01lJk5OANDLh7z6djHlnW_w?rs=1&pid=ImgDetMain" },
-    { id: 9, name: "Blueberry", color: "Blue", price: 22, image: "https://www.thespruceeats.com/thmb/EgzQ3G_O11J8Dz_nIrXJW_IFbz8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-90053592-590e483b3df78c92837c6c40.jpg" },
-    { id: 10, name: "Kiwi", color: "Green", price: 14, image: "https://cdn.mos.cms.futurecdn.net/ACE92LVKCebMpzQzvpwDcD.jpg" },
+    { id: 9, name: "Blueberry", color: "Blue", price: 22, image: "https://th.bing.com/th/id/OIP.Ko_t7nYVXfAl_92IX-hhVgHaHa?rs=1&pid=ImgDetMain" },
+    { id: 10, name: "Kiwi", color: "Green", price: 14, image: "https://healthjade.net/wp-content/uploads/2017/09/kiwi-fruit.jpg" }, 
     { id: 11, name: "Dragon Fruit", color: "Pink", price: 30, image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Hylocereus_undatus_red_pitahaya.jpg" },
-    { id: 12, name: "Avocado", color: "Green", price: 16, image: "https://www.healthifyme.com/blog/wp-content/uploads/2022/07/Avocado-Feature.jpg" }
+    { id: 12, name: "Avocado", color: "Green", price: 16, image: "https://domf5oio6qrcr.cloudfront.net/medialibrary/5138/h0618g16207257173805.jpg" }
   ];
   
   const [cartItems, setCartItems] = useState([]);
@@ -99,13 +99,13 @@ export default function Fruits() {
       </Card>
 
       <Offcanvas show={showCart} onHide={handleCloseCart} placement="end">
-        <Offcanvas.Header closeButton className="bg-light">
+        <Offcanvas.Header closeButton className="bg-light border-bottom">
           <Offcanvas.Title>
             <i className="bi bi-cart me-2"></i>
             Your Shopping Cart
           </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="p-3">
           <Cart 
             items={cartItems} 
             onRemove={handleRemoveFromCart} 

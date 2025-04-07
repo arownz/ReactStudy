@@ -10,7 +10,6 @@ import Condition from './components/Condition/Condition';
 import Counter from './components/Counter/Counter';
 import Form from './components/Form/Form';
 
-
 // Import Bootstrap CSS and JS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -47,8 +46,8 @@ function App() {
           </Container>
         </Navbar>
 
-        {/* Main Content with padding for fixed navbar */}
-        <div className="flex-grow-1" style={{ paddingTop: "80px" }}>
+        {/* Main Content with padding for fixed navbar and footer */}
+        <div className="flex-grow-1" style={{ paddingTop: "80px", paddingBottom: "70px" }}>
           <Container className="py-4">
             <div className="p-3 bg-light rounded-3 shadow-sm">
               <Routes>
@@ -56,9 +55,9 @@ function App() {
                   path="/"
                   element={
                     <div className="text-center py-4">
-                      <h1 className="display-4 fw-bold">React First Lesson Hands-On</h1>
+                      <h1 className="display-4 fw-bold">React Lesson Hands-On</h1>
                       <p className="lead mt-3">
-                        Welcome to your first React lesson! Explore the navigation links above to learn about Props, Numbers, and More during Sir Rennen lesson.
+                        Welcome to my React lesson hands on, Explore the navigation links above to learn about Props, Numbers, and More during Sir Rennen lesson to INF 222.
                       </p>
                       <img
                         src={reactLogo}
@@ -80,8 +79,8 @@ function App() {
           </Container>
         </div>
         
-        {/* Footer */}
-        <footer className="bg-dark text-white py-3 mt-5">
+        {/* Fixed Bottom Footer */}
+        <footer className="bg-dark text-white py-3 fixed-bottom shadow">
           <Container className="text-center">
             <p className="mb-0">&copy; 2025 React Study. All rights reserved by Harold.</p>
           </Container>
