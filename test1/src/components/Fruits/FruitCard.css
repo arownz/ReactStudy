@@ -1,42 +1,62 @@
 /* Hide the Buy button by default */
 .buy-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .buy-button {
-    display: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 20px;
-    background-color: #007bff;
-    border: none;
-    color: white;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  /* Show the Buy button on hover */
-  .fruit-card:hover .buy-button {
-    display: block;
-  }
-  
-  /* Add hover effect for the card */
-  .fruit-card {
-    border: none;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .fruit-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-  }
-  
-  /* Style the fruit image */
-  .fruit-image {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #ddd;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy-button {
+  display: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Show the Buy button on hover */
+.fruit-card:hover .buy-button {
+  display: block;
+}
+
+/* Style for the add to cart button */
+.addtocart-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add hover effect for the card */
+.fruit-card {
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.fruit-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
+}
+
+/* Style the fruit image */
+.fruit-image {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.fruit-card:hover .fruit-image {
+  transform: scale(1.05);
+}

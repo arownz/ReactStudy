@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
@@ -9,6 +10,7 @@ import Condition from './components/Condition/Condition';
 import Counter from './components/Counter/Counter';
 import Form from './components/Form/Form';
 
+
 // Import Bootstrap CSS and JS
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,79 +18,74 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
-      <div>
-        {/* Top Navigation Bar */}
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-          <div className="container-fluid">
-            <Link className="navbar-brand d-flex align-items-center" to="/">
-              <img src={viteLogo} className="logo me-2" alt="Vite logos" />
+      <div className="d-flex flex-column min-vh-100">
+        {/* Fixed Top Navigation Bar */}
+        <Navbar 
+          bg="dark" 
+          variant="dark" 
+          expand="lg" 
+          fixed="top" 
+          className="shadow-sm border-bottom border-secondary"
+        >
+          <Container fluid>
+            <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+              <img src={viteLogo} className="logo me-2" alt="Vite logo" />
               <img src={reactLogo} className="logo react me-2" alt="React logo" />
               <span className="fw-bold">React Study</span>
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNav">
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/props">Props</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/numbers">Numbers</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/fruits">Fruits</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/condition">Condition</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/counter">Counter</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/form">Form</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
+                <Nav.Link as={Link} to="/props" className="mx-1 px-3 rounded-pill">Props</Nav.Link>
+                <Nav.Link as={Link} to="/numbers" className="mx-1 px-3 rounded-pill">Numbers</Nav.Link>
+                <Nav.Link as={Link} to="/fruits" className="mx-1 px-3 rounded-pill">Fruits</Nav.Link>
+                <Nav.Link as={Link} to="/condition" className="mx-1 px-3 rounded-pill">Condition</Nav.Link>
+                <Nav.Link as={Link} to="/counter" className="mx-1 px-3 rounded-pill">Counter</Nav.Link>
+                <Nav.Link as={Link} to="/form" className="mx-1 px-3 rounded-pill">Form</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
 
-        {/* Routes */}
-        <div className="container mt-5">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="text-center">
-                  <h1 className="display-4 fw-bold">React First Lesson Hands-On</h1>
-                  <p className="lead mt-3">
-                    Welcome to your first React lesson! Explore the navigation links above to learn about Props, Numbers, and More during 3/31/2025 lesson.
-                  </p>
-                  <img
-                    src={reactLogo}
-                    alt="React Logo"
-                    className="mt-4"
-                    style={{ width: '150px', animation: 'spin 5s linear infinite' }}
-                  />
-                </div>
-              }
-            />
-            <Route path="/props" element={<Props name="Harold" gender="Male" />} />
-            <Route path="/numbers" element={<Numbers />} />
-            <Route path="/fruits" element={<Fruits />} />
-            <Route path="/condition" element={<Condition />} />
-            <Route path="/counter" element={<Counter />} />
-            <Route path="form" element={<Form />} />
-          </Routes>
+        {/* Main Content with padding for fixed navbar */}
+        <div className="flex-grow-1" style={{ paddingTop: "80px" }}>
+          <Container className="py-4">
+            <div className="p-3 bg-light rounded-3 shadow-sm">
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <div className="text-center py-4">
+                      <h1 className="display-4 fw-bold">React First Lesson Hands-On</h1>
+                      <p className="lead mt-3">
+                        Welcome to your first React lesson! Explore the navigation links above to learn about Props, Numbers, and More during Sir Rennen lesson.
+                      </p>
+                      <img
+                        src={reactLogo}
+                        alt="React Logo"
+                        className="mt-4"
+                        style={{ width: '150px', animation: 'spin 5s linear infinite' }}
+                      />
+                    </div>
+                  }
+                />
+                <Route path="/props" element={<Props name="Harold" gender="Male" />} />
+                <Route path="/numbers" element={<Numbers />} />
+                <Route path="/fruits" element={<Fruits />} />
+                <Route path="/condition" element={<Condition />} />
+                <Route path="/counter" element={<Counter />} />
+                <Route path="/form" element={<Form />} />
+              </Routes>
+            </div>
+          </Container>
         </div>
+        
+        {/* Footer */}
+        <footer className="bg-dark text-white py-3 mt-5">
+          <Container className="text-center">
+            <p className="mb-0">&copy; 2025 React Study. All rights reserved by Harold.</p>
+          </Container>
+        </footer>
       </div>
     </Router>
   );
