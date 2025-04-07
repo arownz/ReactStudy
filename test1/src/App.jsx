@@ -30,7 +30,7 @@ function App() {
             <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
               <img src={viteLogo} className="logo me-2" alt="Vite logo" />
               <img src={reactLogo} className="logo react me-2" alt="React logo" />
-              <span className="fw-bold">React Study</span>
+              <span className="fw-bold">Harold React Study</span>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -55,7 +55,7 @@ function App() {
                   path="/"
                   element={
                     <div className="text-center py-4">
-                      <h1 className="display-4 fw-bold">React Lesson Hands-On</h1>
+                      <h1 className="display-4 fw-bold">Harold React Lesson Hands-On</h1>
                       <p className="lead mt-3">
                         Welcome to my React lesson hands on, Explore the navigation links above to learn about Props, Numbers, and More during Sir Rennen lesson to INF 222.
                       </p>
